@@ -1,4 +1,5 @@
 // Main.java
+//Orlov Egor
 
 import ru.ifmo.se.pokemon.*;
 import Pokemons.*;
