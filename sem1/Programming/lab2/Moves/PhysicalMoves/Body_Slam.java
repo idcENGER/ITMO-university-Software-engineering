@@ -14,9 +14,6 @@ public class Body_Slam extends PhysicalMove{
         if ((Math.random() <= 0.3) && (!p.hasType(Type.ELECTRIC))){
             Effect.paralyze(p);
             paralyzing = true;
-/*C вероятностью 30% наложит эффект paralyzing.Покемоны электрического типа, обладающие способностью гибкости,
- или те, кто стоит за заменой, не могут быть парализованы
- */
         }
     }
     @Override
