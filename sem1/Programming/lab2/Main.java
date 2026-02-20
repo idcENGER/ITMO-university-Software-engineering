@@ -17,9 +17,9 @@ public class Main{
         fight.addAlly(p1);
         fight.addAlly(p3);
         fight.addAlly(p5);
-        fight.addFoe(p2);
-        fight.addFoe(p4);
         fight.addFoe(p6);
+        fight.addFoe(p4);
+        fight.addFoe(p2);
         fight.go();
     }
 }

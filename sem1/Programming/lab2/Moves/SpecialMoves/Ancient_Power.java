@@ -2,6 +2,8 @@
 
 package Moves.SpecialMoves;
 
+import Pokemons.Fomantis;
+import Pokemons.Lurantis;
 import ru.ifmo.se.pokemon.*;
 
 public class Ancient_Power extends SpecialMove{
@@ -9,6 +11,14 @@ public class Ancient_Power extends SpecialMove{
         super(Type.ROCK,60,100);
     }
     private boolean raise = false;
+
+    protected void applyOppEffects(Pokemon p) {
+        if(p instanceof Fomantis){
+            p.setMod(Stat.HP,-(((Fomantis)p).max_hp)/3);
+        }if(p instanceof Lurantis){
+            p.setMod(Stat.HP,-(((Lurantis)p).max_hp)/3);
+        }
+    }
     @Override
     protected void applySelfEffects(Pokemon p){
         if (Math.random() <= 0.1){
