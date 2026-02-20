@@ -17,8 +17,5 @@ last update 20.02.2025
 public class Main {
     public static void main(String... args){
         double time = 0;
-        Character Friday = new Character();
-        Friday.name = "Friday";
-        System.out.println(Friday.description("123"));
     }
 }

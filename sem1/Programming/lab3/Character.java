@@ -1,5 +1,8 @@
-public class Character implements Human{
+public abstract class Character implements Human{
+
     String name;
+    int HP;
+
     @Override
     public void execute() {
     }
