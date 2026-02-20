@@ -1,3 +1,5 @@
+package Characters;
+
 public abstract class Wild implements Human {
 
     static int HP = 100;
@@ -8,10 +10,6 @@ public abstract class Wild implements Human {
 
     @Override
     public void description() {
-    }
-
-    @Override
-    public void getName() {
     }
 
     public abstract void getDamage(int damage);

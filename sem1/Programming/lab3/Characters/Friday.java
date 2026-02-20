@@ -1,6 +1,8 @@
+package Characters;
+
 public class Friday extends Character{
 
-    protected Friday(String name,int HP){
+    public Friday(String name, int HP){
         super("Friday",100);
     }
     public void execute(Wildman wildman) {

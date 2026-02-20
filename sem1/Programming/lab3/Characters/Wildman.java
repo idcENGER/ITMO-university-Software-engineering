@@ -1,3 +1,6 @@
+package Characters;
+import Items.Item;
+
 public class Wildman extends Wild{
 
     static int HP = 100;
@@ -6,8 +9,13 @@ public class Wildman extends Wild{
     }
 
     @Override
-    public void execute() {
-        super.execute();
+    public String getName(String name) {
+        return "";
+    }
+
+    @Override
+    public void giveItem(Item item) {
+
     }
 
     @Override

@@ -1,3 +1,6 @@
+package Characters;
+import Items.Item;
+
 public class Character implements Human{
 
     String name;
@@ -15,6 +18,12 @@ public class Character implements Human{
     }
 
     @Override
-    public void getName() {
+    public String getName(String name) {
+        return name;
+    }
+
+    @Override
+    public void giveItem(Item item) {
+        boolean hasItem = true;
     }
 }
