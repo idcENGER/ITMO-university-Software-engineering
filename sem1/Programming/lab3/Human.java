@@ -2,7 +2,7 @@ public interface Human {
 
     void execute();
 
-    String description(String phrase);
+    void description();
 
-    String getName();
+    void getName();
 }

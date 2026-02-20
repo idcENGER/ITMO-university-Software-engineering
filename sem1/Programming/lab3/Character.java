@@ -1,19 +1,20 @@
-public abstract class Character implements Human{
+public class Character implements Human{
 
     String name;
     int HP;
+
+    public Character(String name, int hp) {
+    }
 
     @Override
     public void execute() {
     }
 
     @Override
-    public String description(String phrase) {
-        return getName()+":"+phrase;
+     public void description() {
     }
 
     @Override
-    public String getName() {
-        return name;
+    public void getName() {
     }
 }

@@ -1,15 +1,19 @@
 public abstract class Wild implements Human {
+
+    static int HP = 100;
+
     @Override
     public void execute() {
     }
 
     @Override
-    public String description(String phrase) {
-        return getName() + ":" + phrase;
+    public void description() {
     }
 
     @Override
-    public String getName() {
-        return "1";
+    public void getName() {
     }
+
+    public abstract void getDamage(int damage);
+
 }

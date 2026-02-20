@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+
 public class Environment {
 
-    double time;
-    Wild[] team1;
-    Character[] team2;
+    private ArrayList<Object> characters = new ArrayList<>();
+    private ArrayList<Object> wildmans = new ArrayList<>();
 
-    public void add(String[] args){
+    public void addSurv(Character c){
+        characters.add(c);
+    }
 
+    public void addWild(Wildman w){
+        wildmans.add(w);
     }
 
 }
