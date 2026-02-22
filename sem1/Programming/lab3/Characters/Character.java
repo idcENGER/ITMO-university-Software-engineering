@@ -1,16 +1,9 @@
 package Characters;
 import Items.Item;
 
-public class Character implements Human{
-
-    String name;
-    int HP;
+public abstract class Character implements Human{
 
     public Character(String name, int hp) {
-    }
-
-    @Override
-    public void execute() {
     }
 
     @Override
@@ -24,6 +17,7 @@ public class Character implements Human{
 
     @Override
     public void giveItem(Item item) {
+
         boolean hasItem = true;
     }
 }

@@ -3,9 +3,10 @@ import Items.Item;
 
 public class Wildman extends Wild{
 
-    static int HP = 100;
+    private int HP;
 
     public Wildman(String name,int HP){
+        this.HP = HP;
     }
 
     @Override
@@ -20,7 +21,7 @@ public class Wildman extends Wild{
 
     @Override
     public void getDamage(int damage) {
-        HP = HP - damage;
+        this.HP -= damage;
         System.out.println(HP);
     }
 

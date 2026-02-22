@@ -15,14 +15,15 @@ last update 20.02.2025
 */
 import Characters.Friday;
 import Characters.Wildman;
+import Items.Musket;
 
 public class Main {
     public static void main(String... args){
         Environment env = new Environment();
-        env.addSurv(new Friday("Friday",100));
-        env.addWild(new Wildman("w",100));
-        Friday f = new Friday("Friday",1);
-        Wildman w = new Wildman("W",100);
-        f.execute(w);
+        Musket musket = new Musket(50,5);
+        Friday friday = new Friday(musket);
+        Wildman wildman = new Wildman("w",100);
+        musket.getTarget(wildman);
+        friday.execute();
     }
 }
