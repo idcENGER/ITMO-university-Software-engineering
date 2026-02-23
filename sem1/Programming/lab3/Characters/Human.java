@@ -1,14 +1,18 @@
 package Characters;
 
-import Items.Item;
-
 public interface Human {
 
     void execute();
 
     void description();
 
-    String getName(String name);
+    String getName();
 
-    void giveItem(Item item);
+    boolean equals(Object o);
+
+    int hashCode();
+
+    Condition getCondition();
+
+    void setCondition(Condition condition);
 }

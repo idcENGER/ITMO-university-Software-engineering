@@ -1,28 +1,37 @@
 package Characters;
 
-import Items.Item;
 import Items.Musket;
 
 public class Friday extends Character{
 
-    private final Musket musket;
+    private Musket musket;
 
-    public Friday(Musket musket){
-        this.musket = musket;
-        super("Friday",100);
+    public Friday(){
+        super("Пятница",Condition.MOVED);
     }
 
     public void execute() {
         this.musket.use();
         this.description();
     }
-    @Override
-    public void giveItem(Item item){
+
+    public void giveItem(Musket m){
+        this.musket = m;
     }
 
     @Override
     public void description() {
-        String dmg = String.valueOf(this.musket.showDamage());
-        System.out.println("попал и нанес "+ dmg);
+        System.out.println(getName()+ " выстрелил два раза и " + (musket.MISS ? "не попал" : ("попал в дикаря")));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Friday friday = (Friday) o;
+        return getName().equals(friday.getName());
     }
 }

@@ -1,23 +1,38 @@
 package Characters;
-import Items.Item;
 
 public abstract class Character implements Human{
 
-    public Character(String name, int hp) {
+    private final String name;
+    private Condition condition;
+
+    protected Character(String name, Condition condition){
+        this.name = name;
+        this.condition = condition;
     }
 
     @Override
-     public void description() {
-    }
-
-    @Override
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
 
     @Override
-    public void giveItem(Item item) {
+    public boolean equals(Object o){
+        if (this == o)
+            return true;
 
-        boolean hasItem = true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Character character = (Character) o;
+        return name.equals(character.name);
+    }
+
+    @Override
+    public Condition getCondition() {
+        return condition;
+    }
+
+    @Override
+    public void setCondition(Condition c){
+        this.condition = c;
     }
 }

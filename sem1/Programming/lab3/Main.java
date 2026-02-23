@@ -13,17 +13,11 @@ last update 20.02.2025
 Я тотчас же перерезал стягивавшие его путы и хотел помочь ему встать. Но он не держался на ногах: он даже говорить был не в силах,
 а только жалобно стонал: несчастный, кажется, думал, что его только затем и развязали, чтобы вести на убой.
 */
-import Characters.Friday;
-import Characters.Wildman;
-import Items.Musket;
 
 public class Main {
     public static void main(String... args){
-        Environment env = new Environment();
-        Musket musket = new Musket(50,5);
-        Friday friday = new Friday(musket);
-        Wildman wildman = new Wildman("w",100);
-        musket.getTarget(wildman);
-        friday.execute();
+        Environment env;
+        env = new Environment();
+        env.start();
     }
 }
