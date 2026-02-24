@@ -4,10 +4,16 @@ import Items.Boat;
 
 public abstract class Wild implements Human {
 
-    Boat boat;
+    private Boat boat;
+
+
+    public abstract void getDamage(int damage);
 
     @Override
-    public void execute() {
+    public void execute() throws WrongActionException{
+        if (boat == null){
+            throw new WrongActionException("boat cant be null");
+        }
         boat.use();
     }
 
@@ -16,10 +22,13 @@ public abstract class Wild implements Human {
     }
 
     @Override
-    public void description() {
+    public void description(){
         System.out.println("Трое дикарей спасаются в лодке");
     }
 
-    public abstract void getDamage(int damage);
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{" + getCondition() +'}';
+    }
 
 }

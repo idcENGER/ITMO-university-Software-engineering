@@ -1,13 +1,14 @@
 package Items;
 
+import Characters.Condition;
 import Characters.Wildman;
 
 import java.util.random.RandomGenerator;
 
 public class Musket{
-    private int bullets;
-    protected int damage;
-    private Wildman target;
+    public int bullets;
+    public int damage;
+    public Wildman target;
     public boolean MISS = false;
 
     public Musket(int damage,int bullets){
@@ -24,14 +25,17 @@ public class Musket{
         if (this.bullets>0) {
             double miss_chance = rand.nextDouble(0.5,1.0);
 
-            if ((miss_chance) >= 0.65 + (double)target.getAvoid_skill()/1000){
-                target.getDamage(damage);
-            }else{
-                this.bullets-=1;
-                this.MISS = true;
+            for (int i=0;i<2;i++){
+                if ((miss_chance) >= 0.65 + (double)target.getAvoid_skill()/1000){
+                    target.getDamage(damage);
+                    if(target.getHP()<=0){
+                        target.setCondition(Condition.DEAD);
+                }else{
+                    this.bullets-=1;
+                    this.MISS = true;
+                    }
+                }
             }
-        }else{
-            System.out.println("you have not bullets");
         }
     }
 }

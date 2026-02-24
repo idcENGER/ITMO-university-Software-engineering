@@ -1,7 +1,6 @@
 /*
 lab3 version 26708
 author Egor Orlov
-last update 20.02.2025
 Трое дикарей, спасшихся в лодке, работали веслами изо всех сил, стараясь поскорей уйти из-под выстрелов.
 Пятница раза два или три пальнул им в догонку, но, кажется, не попал. Он стал меня убеждать взять одну из их лодок
 и пуститься за ними в погоню. Меня и самого тревожил их побег: я боялся, что, когда они расскажут своим землякам о том,
@@ -14,8 +13,10 @@ last update 20.02.2025
 а только жалобно стонал: несчастный, кажется, думал, что его только затем и развязали, чтобы вести на убой.
 */
 
+import Characters.WrongActionException;
+
 public class Main {
-    public static void main(String... args){
+    public static void main(String... args) throws WrongActionException {
         Environment env;
         env = new Environment();
         env.start();

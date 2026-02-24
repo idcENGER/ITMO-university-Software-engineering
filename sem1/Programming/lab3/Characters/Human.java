@@ -2,7 +2,8 @@ package Characters;
 
 public interface Human {
 
-    void execute();
+    void execute()
+        throws WrongActionException;
 
     void description();
 

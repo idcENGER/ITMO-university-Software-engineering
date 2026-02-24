@@ -1,4 +1,5 @@
 import Characters.*;
+import Characters.Character;
 import Items.Boat;
 import Items.Musket;
 
@@ -16,8 +17,9 @@ public class Environment {
     Wildman wildman3;
     Boat boat;
     ArrayList<Wildman> wildmans = new ArrayList<>();
+    ArrayList<Character> characters = new ArrayList<>();
 
-    public Environment() {
+    public Environment() throws WrongActionException, MyUncheckedException{
         musket = new Musket(50,2);
         friday = new Friday();
         robinson = new Robinson();
@@ -25,15 +27,21 @@ public class Environment {
         wildman1 = new Wildman(100,200, Condition.BASED);
         wildman2 = new Wildman(100,100, Condition.BASED);
         wildman3 = new Wildman(100,500, Condition.BASED);
-        wildmans.add(wildman1);
-        wildmans.add(wildman2);
-        wildmans.add(wildman3);
+        wildmans.add(wildman1); wildmans.add(wildman2); wildmans.add(wildman3);
+        characters.add(friday); characters.add(robinson); characters.add(italian);
         boat = new Boat(1, wildmans);
         friday.giveItem(musket);
         wildman1.giveItem(boat);
+        if (wildmans.isEmpty() || characters.isEmpty()){
+            try {
+                throw new MyUncheckedException("Сценарий некорректный");
+            }catch (MyUncheckedException e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
-    public void start(){
+    public void start() throws WrongActionException {
         wildman1.execute();
         RandomGenerator rand = RandomGenerator.getDefault();
         int rd = rand.nextInt(0,3);
@@ -41,9 +49,5 @@ public class Environment {
         friday.execute();
         robinson.toFree(italian);
         italian.execute();
-        if (italian.getCondition() == Condition.SCARED){
-            italian.description();
-        }
-
     }
 }

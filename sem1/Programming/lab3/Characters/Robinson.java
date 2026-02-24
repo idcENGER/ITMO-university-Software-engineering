@@ -13,7 +13,6 @@ public class Robinson extends Character{
 
     @Override
     public void execute() {
-
     }
 
     @Override
@@ -21,14 +20,4 @@ public class Robinson extends Character{
         System.out.println("Робинзон освободил человека, лежавшего в лодке");
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-
-        if (o == null || getClass() != o.getClass())
-            return false;
-        Robinson robinson = (Robinson) o;
-        return getName().equals(robinson.getName());
-    }
 }

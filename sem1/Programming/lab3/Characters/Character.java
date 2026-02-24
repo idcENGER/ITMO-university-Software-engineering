@@ -16,6 +16,16 @@ public abstract class Character implements Human{
     }
 
     @Override
+    public Condition getCondition() {
+        return condition;
+    }
+
+    @Override
+    public void setCondition(Condition c){
+        this.condition = c;
+    }
+
+    @Override
     public boolean equals(Object o){
         if (this == o)
             return true;
@@ -27,12 +37,15 @@ public abstract class Character implements Human{
     }
 
     @Override
-    public Condition getCondition() {
-        return condition;
+    public int hashCode() {
+        return name.hashCode();
     }
 
     @Override
-    public void setCondition(Condition c){
-        this.condition = c;
+    public String toString() {
+        return getClass().getSimpleName() + "{" +
+                "name='" + name + '\'' +
+                ", mood=" + condition + '}';
     }
+
 }

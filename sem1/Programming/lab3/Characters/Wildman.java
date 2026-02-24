@@ -36,4 +36,8 @@ public class Wildman extends Wild{
         this.HP -= damage;
     }
 
+    public int getHP(){
+        return HP;
+    }
+
 }
