@@ -1,15 +1,12 @@
 import java.util.HashSet;
 
 public class CollectionManager {
-    private final HashSet<StudyGroup> collections = new HashSet();
-
-    public void add(StudyGroup studyGroup){
-        collections.add(studyGroup);
+    private final HashSet<MusicBand> collections = new HashSet<>();
+    public void add(MusicBand musicBand){
+        collections.add(musicBand);
     }
     public void clear(){
         collections.clear();
     }
 }
-class  StudyGroup{
-
-}
+class MusicBand{}

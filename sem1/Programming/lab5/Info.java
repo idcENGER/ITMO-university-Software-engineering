@@ -1,7 +1,7 @@
 
 public class Info implements Command{
 
-    CommandInvoker
+    //CollectionManager
 
     @Override
     public void execute(String... args) {
@@ -13,8 +13,9 @@ public class Info implements Command{
         return "info";
     }
 
-    protected void description(){
-
-
+    @Override
+    public String description() {
+        return getName() + " - выводит информацию о коллекции";
     }
+
 }

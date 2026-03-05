@@ -12,7 +12,6 @@ public class Main {
 
         while (true) {
             String commandName = scanner.nextLine();
-            System.out.println(commandName);
             commandInvoker.execute(commandName);
 
             if (commandName.equals("help")) {
