@@ -1,7 +1,8 @@
+package Commands;
+
+import Menegers.CommandInvoker;
 
 public class Help implements Command{
-
-
     @Override
     public void execute(String... args){
         System.out.println("Command list:");
@@ -15,8 +16,9 @@ public class Help implements Command{
 
     @Override
     public String description() {
-        return getName()+" - выводит список комманд";
+        return getName()+": вывести справку по доступным командам";
     }
+
 
 
 }

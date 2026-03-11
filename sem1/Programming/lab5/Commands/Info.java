@@ -1,3 +1,4 @@
+package Commands;
 
 public class Info implements Command{
 
@@ -15,7 +16,7 @@ public class Info implements Command{
 
     @Override
     public String description() {
-        return getName() + " - выводит информацию о коллекции";
+        return getName() + ": вывести в стандартный поток вывода информацию о коллекции ";
     }
 
 }
