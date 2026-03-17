@@ -1,3 +1,5 @@
+package Commands;
+
 public interface Command {
 
     public void execute(String ...args);
@@ -5,5 +7,6 @@ public interface Command {
     public String getName();
 
     public String description();
+
 }
 
